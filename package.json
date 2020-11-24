@@ -10,6 +10,7 @@
     "@types/node": "^12.19.2",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
@@ -26,7 +27,21 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "warn",
+        "never"
+      ],
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "jsx-quotes": [
+        "warn",
+        "prefer-double"
+      ]
+    }
   },
   "browserslist": {
     "production": [

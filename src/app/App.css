@@ -1,0 +1,248 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #4E4E4E;
+    overflow: hidden;
+    pointer-events: all;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper {
+    margin: 50px auto 0;
+    width: 700px;
+}
+
+.player {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background-color: #2f2f2f;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.play, .pause, .rew, .fwd, .mix, .mix-active, .repeat, .repeat-active, .pl {
+    background: transparent url("../img/spr.png") no-repeat;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+}
+
+.play {
+    background-position: 0 0;
+    left: 12px;
+    top: 14px;
+    width: 32px;
+    height: 32px;
+}
+
+.pause {
+    background-position: 0 -32px;
+    left: 12px;
+    top: 14px;
+    width: 32px;
+    height: 32px;
+}
+
+.rew {
+    background-position: -32px 0;
+    left: 50px;
+    top: 23px;
+    width: 13px;
+    height: 14px;
+}
+
+.fwd {
+    background-position: -32px -14px;
+    left: 71px;
+    top: 23px;
+    width: 13px;
+    height: 14px;
+}
+
+.tracker, .tracker_track, .tracker_amount, .tracker_handler,
+.tracker_hint {
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tracker {
+    cursor: pointer;
+    height: 15px;
+}
+
+.tracker_track {
+    top: 6px;
+    background-color: #5A4040;
+    width: 100%;
+    height: 2px;
+}
+
+.tracker_amount {
+    background-color: #000;
+    height: 2px;
+}
+
+.tracker_handler {
+    background-color: #000;
+    top: -3px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50% 50%;
+}
+
+.tracker_hint {
+    background-color: #5A4040;
+    padding: 4px;
+    top: -22px;
+    left: 0;
+    font-size: 11px;
+    border-radius: 25%;
+}
+
+.audio {
+    left: 98px;
+    top: 30px;
+    width: 390px;
+}
+
+.volume {
+    left: 508px;
+    top: 30px;
+    width: 50px;
+}
+
+.mix, .mix-active {
+    background-position: -45px 0;
+    left: 576px;
+    top: 18px;
+    width: 22px;
+    height: 18px;
+}
+
+.mix-active {
+    background-position: -45px -18px;
+}
+
+.repeat, .repeat-active {
+    background-position: -67px 0;
+    left: 607px;
+    top: 19px;
+    width: 24px;
+    height: 16px;
+}
+
+.repeat-active {
+    background-position: -67px -16px;
+}
+
+.pl {
+    background-position: -32px -36px;
+    left: 650px;
+    top: 16px;
+    width: 22px;
+    height: 28px;
+}
+
+.play:hover {
+    top: 15px;
+}
+
+.pause:hover {
+    top: 15px;
+}
+
+.rew:hover, .fwd:hover {
+    top: 24px;
+}
+
+.mix:hover, .mix-active:hover {
+    top: 19px;
+}
+
+.repeat:hover, .repeat-active:hover {
+    top: 20px;
+}
+
+.pl:hover {
+    top: 17px;
+}
+
+.title {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    padding-left: 2px;
+    top: 15px;
+    left: 97px;
+    width: 362px;
+    color: white;
+    user-select: text;
+}
+
+.time {
+    position: absolute;
+    left: 464px;
+    top: 15px;
+    width: 24px;
+    color: white;
+}
+
+.playlist-outer {
+    overflow: hidden;
+    transition: height .3s ease;
+}
+
+.playlist {
+    background-color: #2f2f2f;
+    width: 100%;
+    height: 100%;
+    margin: 10px 0 0;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.playlist li {
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+    color: white;
+    list-style-type: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.playlist .active {
+    font-weight: bold;
+    background-color: #5A4040;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
